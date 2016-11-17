@@ -284,7 +284,7 @@
                     <p>To make it clear, here I create a button for demonstration to publish a new post. When it is clicked, the <code>publishPost()</code> will be called.</p>
                     <p>Inside this function, you need to call <code>FB.api</code>. <code>/me/feed</code> refers to the current user feed; <code>POST</code> refers to the HTTP POST method. <code>{"message": "We are Oregon State University buddies."}</code> is the field name of the main body published. There are more fields that can be used such as "link", "place", "tags", and so on.</p>
                     <script async src="//jsfiddle.net/chanloki/nrwhhLbz/6/embed/js,html/dark/"></script>
-
+                    <br>
                     <img src="img/publish_actions.png" class="img-responsive">
                     <br>
                     <img src="img/post.png" class="img-responsive">
@@ -304,6 +304,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
+                    <p> Note that only the log in function will be demonstrated, as the publish action has to be reviewed by Facebook with requirements, such as privacy URL, before it can be provided to the public.</p>
                     <div id="fbloginbut" scope="public_profile,email,publish_actions" onlogin="checkLoginState();" class="fb-login-button" data-show-faces="false" data-auto-logout-link="true"></div>
                     <div id="status"></div>
 
