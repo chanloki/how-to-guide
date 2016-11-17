@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Facebook API - How-To Guide</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="css/freelancer.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+    <script src="js/demo.js"></script>
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">Facebook API</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#create">Create</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#setup">Setup</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#login">Facebook Login</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#graph">Publish</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#demo">Demo</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <img class="img-responsive" src="img/profile.png" alt=""> -->
+                    <div class="intro-text">
+                        <span class="name">Getting Started with Facebook API</span>
+                        <hr class="star-light">
+                        <span class="skills">JavaScript SDK - Graph API</span>
+
+                        <p style="margin-top: 30px;">Summary</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Create Section -->
+    <section id="create">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Create Facebook App</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p>We need to have a Facebook App ID to make API calls to Facebook.</p>
+
+                    <p>Steps</p>
+                    <ol>
+                        <li>
+                            Sign in to your Facebook account
+                        </li>
+                        <li>
+                            Visit <a href="http://developers.facebook.com" target="_blank"><code>http://developers.facebook.com</code></a> and click "Add a New App" under "My Apps"
+                            <img src="img/add_a_new_app.png" class="img-responsive" alt="add a new app">
+                        </li>
+                        <li>
+                        <p> First you need to first add the product, Facebook Login, under the "PRODUCTS".</p>
+                        <img src="img/add-product.png" class="img-responsive" alt="">
+                        <br>
+                        <p>After that you can modify the Valid OAuth redirect URIs in order to build the trust between your website and Facebook. Thus, Facebook can redirect the user back to your website.</p>
+                        <img src="img/oauth.png" class="img-responsive" alt=""></li>
+                    </ol>
+
+                    <!-- <h3>Site URL</h3>
+                    <p>If we host the website locally, we could type<code>http://localhost</code> in the Site URL field.</p>
+                    <div class="portfolio-item">
+                        <div class="portfolio-link">
+                            <img src="img/site-url.png" class="img-responsive" alt="">
+                        </div>
+                    </div> -->
+
+                    <!-- <h3>Valid OAuth redirect URIs</h3>
+                    <p>Similary, we ask Facebook to redirect users back to localhost after the OAuth. We type <code>http://localhost</code> in the Valid OAuth redirect URIs field.</p>
+                    <div class="portfolio-item">
+                        <div class="portfolio-link">
+                            <img src="img/oauth.png" class="img-responsive" alt="">
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Section -->
+    <section class="success" id="setup">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Setup JavaScript SDK</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <!-- <p><code><a href="https://developers.facebook.com/docs/javascript" target="_blank">https://developers.facebook.com/docs/javascript</a></code></p> -->
+
+                <p>To setup the JavaScript SDK, you simply need to copy the following script and place it directly after the opening &lt;body&gt; tag on pages where you want to load the JavaScript SDK:</p>
+                <div class="col-lg-12 text-center">
+                    <script async src="http://jsfiddle.net/chanloki/soLdjq6p/1/embed/js/dark/"></script>
+                </div>
+                <p>This code will load and initialize the JavaScript SDK. You must replace the value in appId with the ID of your own Facebook App. You can find your appId on the top of the app dashboard page.</p>
+                <img src="img/app-id.png" class="img-responsive">
+
+                <h3>Code Explain</h3>
+                <p> <code>FB.init</code> is to initialize the Facebook SDK. It contains your appID to identify your application, the xfbml is to enable the embed Facebook script to parse through the whole page and place the social plugins, and the version refers to the current graph api verison used. </p>
+                <p><code>function(d,s,id)</code> is to insert the script with the element ID facebook-jssdk, connecting to the Facebook, to include the SDK if it has not existed yet. </p>
+                <p>Once setup successfully, we will be able to leverage the power of Facebook API to make interesting applications.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login Section -->
+    <section id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Facebook Login</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p>This is an example of using Facebook API. API, Application Programming Interface, provides different modules for developers to build up a whole program without requiring to know how it works inside. In other words, API can simplify the process of programming by abstracting the implementation and leaving the objects that is needed for the developers.</p>
+                    <p>The following code is to ask for users' permission to log in onto their Facebook account and authorize this page to get and use some of their information.</p>
+                    <p>In the HTML, you can first create a button to prompt for the permissions dialog with the fb:login-button tag. You need to add the permissions list in the <code>scope</code> attribute. The <code>onlogin="checkLoginState()"</code> will call the checkLoginState function when the users log in successfully.</p>
+
+                    <script async src="http://jsfiddle.net/chanloki/fxrzeymL/5/embed/js,html/"></script>
+
+
+                    <h3>Steps</h3>
+                    <ol>
+                        <!-- <li>Check the login Status</li> -->
+                        <!-- <li>Invoke the login dialogue and ask for permission</li> -->
+                        <!-- <li>Verify the identity</li> -->
+                        <!-- <li>Store the resulting access token</li> -->
+                        <!-- <li>Make API calls</li> -->
+                        <li>
+                            Check the login status
+                            <img src="img/log-into.png" class="img-responsive">
+                        </li>
+                        <!-- call FB.getLoginStatus() -->
+                        <!-- call stausChangeCallback -->
+                        <!-- either go to testAPI() or show the notice to ask for log in -->
+                        <li>
+                            Invoke the login dialogue and ask for permission
+                            <img src="img/permission.png" class="img-responsive">
+                        </li>
+                        <!-- call FB.getLoginStatus() -->
+                        <li>
+                            Successful login
+                            <img src="img/logged-in.png" class="img-responsive">
+                        </li>
+                        <!-- fetch the user information from the response -->
+                        <li>Access and apply the users' personal information with authorization</li>
+                    </ol>
+
+                    <p>After initializing the Facebook SDK, the page will check the login status by calling the <code>FB.getLoginStatus()</code>, then it passes the status response to the <code>statusChangeCallback(response)</code> to check the current login status. If the status is "connected", which means the users has logged into their account at the moment, the <code>testAPI()</code> will be called. If the status from the response is stated as "not_authorized", it implies that the users have not authorized your application to log in with their Facebook account. Other situations will show the notice for asking the users to log into their Facebook. </p>
+                    <p>When the users try to log into their Facebook account, a login dialogue will pop up and ask for the users' permission to access their personal information. When the users authorize you to do so, Facebook Server will send the access token to your application. Your application will store the access token for sending back to Facebook server whenever it needs to make the API call. That said, you will not aware of this access token processing as this will be done within the SDK. This authorization mechanism is called OAuth, widely used for providing personal information with the advantage of disclosing their usernames and passwords </p>
+
+                    <h3>Successful Response</h3>
+                    <img src="img/response.png" class="img-responsive">
+                    <p>
+                        In order to understand what responses that are actually sent back, you can insert the <code>console.log(response)</code> under the <code>statusChangeCallback()</code> and <code>testAPI()</code>. The image above shows the two responses. The upper response object with the current status "connected". The bottom response object with the user's id and the profile name of the user.
+                    </p>
+                    <p>To access the response, you can simply type <code>[object.name].[attribute]</code> that is response.name for this given example.</p>
+                </div>
+
+                <!-- <div class="col-lg-8 col-lg-offset-2">
+                   <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Name</label>
+                                <input type="text" class="form-control" placeholder="Name" id="name" required data-validation-required-message="Please enter your name.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Email Address</label>
+                                <input type="email" class="form-control" placeholder="Email Address" id="email" required data-validation-required-message="Please enter your email address.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="Phone Number" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <div class="row control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <label>Message</label>
+                                <textarea rows="5" class="form-control" placeholder="Message" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <div class="row">
+                            <div class="form-group col-xs-12">
+                                <button type="submit" class="btn btn-success btn-lg">Send</button>
+                            </div>
+                        </div>
+                    </form>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Publish API Section -->
+    <section class="success" id="graph">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Publish</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <p>If you want to publish a new post on behalf of your users, you can also ask for your users' permission by adding <code>publish_actions</code> in the scope.</p>
+                    <p>To make it clear, here I create a button for demonstration to publish a new post. When it is clicked, the <code>publishPost()</code> will be called.</p>
+                    <p>Inside this function, you need to call <code>FB.api</code>. <code>/me/feed</code> refers to the current user feed; <code>POST</code> refers to the HTTP POST method. <code>{"message": "We are Oregon State University buddies."}</code> is the field name of the main body published. There are more fields that can be used such as "link", "place", "tags", and so on.</p>
+                    <script async src="http://jsfiddle.net/chanloki/nrwhhLbz/6/embed/js,html/dark/"></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo API Section -->
+    <section id="demo">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Login Demo</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <div id="fbloginbut" scope="public_profile,email,publish_actions" onlogin="checkLoginState();" class="fb-login-button" data-show-faces="false" data-auto-logout-link="true"></div>
+                    <div id="status"></div>
+
+                    <!-- <br><br> -->
+                    <!-- <button class="btn btn-primary btn-xs" onclick="publishPost()">Publish a Post</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright &copy; Lok I Chan 2016
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/freelancer.min.js"></script>
+
+</body>
+</html>
