@@ -12,13 +12,13 @@
     <title>Facebook API - How-To Guide</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="css/freelancer.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -156,7 +156,7 @@
 
                 <p>To setup the JavaScript SDK, you simply need to copy the following script and place it directly after the opening &lt;body&gt; tag on pages where you want to load the JavaScript SDK:</p>
                 <div class="col-lg-12 text-center">
-                    <script async src="http://jsfiddle.net/chanloki/soLdjq6p/1/embed/js/dark/"></script>
+                    <script async src="//jsfiddle.net/chanloki/soLdjq6p/1/embed/js/dark/"></script>
                 </div>
                 <p>This code will load and initialize the JavaScript SDK. You must replace the value in appId with the ID of your own Facebook App. You can find your appId on the top of the app dashboard page.</p>
                 <img src="img/app-id.png" class="img-responsive">
@@ -185,7 +185,7 @@
                     <p>The following code is to ask for users' permission to log in onto their Facebook account and authorize this page to get and use some of their information.</p>
                     <p>In the HTML, you can first create a button to prompt for the permissions dialog with the fb:login-button tag. You need to add the permissions list in the <code>scope</code> attribute. The <code>onlogin="checkLoginState()"</code> will call the checkLoginState function when the users log in successfully.</p>
 
-                    <script async src="http://jsfiddle.net/chanloki/fxrzeymL/5/embed/js,html/"></script>
+                    <script async src="//jsfiddle.net/chanloki/fxrzeymL/5/embed/js,html/"></script>
 
 
                     <h3>Steps</h3>
@@ -283,7 +283,7 @@
                     <p>If you want to publish a new post on behalf of your users, you can also ask for your users' permission by adding <code>publish_actions</code> in the scope.</p>
                     <p>To make it clear, here I create a button for demonstration to publish a new post. When it is clicked, the <code>publishPost()</code> will be called.</p>
                     <p>Inside this function, you need to call <code>FB.api</code>. <code>/me/feed</code> refers to the current user feed; <code>POST</code> refers to the HTTP POST method. <code>{"message": "We are Oregon State University buddies."}</code> is the field name of the main body published. There are more fields that can be used such as "link", "place", "tags", and so on.</p>
-                    <script async src="http://jsfiddle.net/chanloki/nrwhhLbz/6/embed/js,html/dark/"></script>
+                    <script async src="//jsfiddle.net/chanloki/nrwhhLbz/6/embed/js,html/dark/"></script>
                 </div>
             </div>
         </div>
@@ -330,10 +330,10 @@
     </div>
 
     <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
